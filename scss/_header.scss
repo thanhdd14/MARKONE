@@ -8,6 +8,9 @@
 	z-index: 999;
 	padding-top: 10px;
 	@include smooth-transition;
+	@include mq(tb){
+		padding-top: 0;
+	}
 	&:before{
 		content: "";
 		position: absolute;
@@ -18,13 +21,23 @@
 		background-color: transparent;
 		background-image: linear-gradient(180deg, #001E4A 22%, rgba(255, 255, 255, 0) 100%);
 		opacity: 0.32;
+		@include mq(tb){
+			background-color: rgba(0, 0, 0, 0.32);
+			opacity: 0.47;
+		}
 	}
-	&.scroll{
-		padding-top: 0;
+	&.js-fixed{
+		@include mq(tb-min){
+			padding-top: 0;
+			background-color: rgba(0, 0, 0, 0.16);
+		}
 	}
 	.inner{
 		position: relative;
 		z-index: 1;
+		@include mq(tb){
+			height: 54px;
+		}
 	}
 	.header-logo{
 		display: block;
@@ -33,6 +46,10 @@
 		@include v-align;
 		left: 15px;
 		z-index: 2;
+		@include mq(tb){
+			width: 116px;
+			left: 60px;
+		}
 	}
 	.header-tel{
 		display: block;
@@ -44,11 +61,17 @@
 		font-weight: bold;
 		z-index: 2;
 		@include flex(center,center,wrap);
+		@include mq(tb){
+			@include font-size(20);
+		}
 		i{
 			display: inline-block;
 			@include font-size(20);
 			color: #B60737;
-			margin: 0 5px 0 0;
+			margin: 4px 5px 0 0;
+			@include mq(tb){
+				@include font-size(14);
+			}
 		}
 	}
 	.header-nav{
@@ -59,12 +82,13 @@
 		@include mq(tb){
 			display: none;
 			position: absolute;
-			top: 0;
+			top: 100%;
 			left: 0;
 			right: 0;
-			height: 100vh;
-			padding: 60px 20px 0;
+			height: calc(100vh - 54px);
 			overflow-y: scroll;
+			background: white;
+			text-align: center;
 			&.active{
 				display: block;
 			}
@@ -76,6 +100,9 @@
 			}
 			&-item{
 				position: relative;
+				@include mq(tb){
+					border-bottom: 1px solid #E5E5E5;
+				}
 				>a{
 					display: block;
 					@include font-size(16);
@@ -83,11 +110,22 @@
 					color: white;
 					padding: 25px 20px;
 					position: relative;
-
+					@include mq(tb){
+						color: #33373d;
+						padding: 10px;
+						&.active{
+							background: #E0E0E0;
+						}
+						&:hover{
+							opacity: 1;
+						}
+					}
 				}
 				&:hover{
-					ul{
-						display: block;
+					@include mq(tb-min){
+						ul{
+							display: block;
+						}
 					}
 				}
 			}
@@ -102,17 +140,34 @@
 					position: absolute;
 					@include v-align;
 					right: 3px;
+					@include mq(tb){
+						border-style: solid;
+						border-width: 7px 5px 0 5px;
+						border-color: #33373d transparent transparent transparent;
+						position: static;
+						display: inline-block;
+						transform: translateY(0);
+						margin: 0 0 0 10px;
+					}
 				}
 			}
 			&-submenu{
-				position: absolute;
-				top: 100%;
-				left: 0;
-				background-color: #f9f9f9;
-				border-top: 3px solid #0BA7BF;
 				display: none;
+				@include mq(tb-min){
+					position: absolute;
+					top: 100%;
+					left: 0;
+					background-color: #f9f9f9;
+					border-top: 3px solid #0BA7BF;
+				}
 				li{
 					border-bottom: 1px solid #e0e0e0;
+					@include mq(tb){
+						border-bottom: 1px solid #E5E5E5;
+						&:last-child{
+							border-bottom: none;
+						}
+					}
 					a{
 						display: block;
 						white-space: nowrap;
@@ -123,16 +178,20 @@
 						&:hover{
 							color: #0e4a8a;
 						}
+						@include mq(tb){
+							color: #33373d;
+							@include font-size(16);
+						}
 					}
 				}
 			}
 		}
 	}
 	.js-mobile {
-		width: 26px;
+		width: 28px;
 		height: 30px;
 		position: absolute;
-		right: 20px;
+		left: 20px;
 		@include v-align;
 		cursor: pointer;
 		z-index: 12;
@@ -145,15 +204,15 @@
 			@include v-align;
 			display: block;
 			width: 100%;
-			height: 2px;
-			background: #333;
+			height: 4px;
+			background: #B81414;
 			border-radius: 3px;
 			&:before,&:after{
 				position: absolute;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background: #333;
+				background: #B81414;
 				content: '';
 				-webkit-transition: -webkit-transform 0.3s;
 				transition: transform 0.3s;
@@ -162,12 +221,12 @@
 			&:before{
 				-webkit-transform: translateY(-250%);
 				transform: translateY(-250%);
-				top: -6px;
+				top: 1px;
 			}
 			&:after{
 				-webkit-transform: translateY(250%);
 				transform: translateY(250%);
-				bottom: -6px;
+				bottom: 1px;
 			}
 		}
 		&--close {
@@ -175,7 +234,7 @@
 				background-color: transparent;
 				&:before,&:after{
 					width: 100%;
-					background: #333;
+					background: #B81414;
 				}
 				&:before {
 					-webkit-transform: translateY(0) rotate(45deg);

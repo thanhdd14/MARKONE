@@ -3,6 +3,9 @@
 #footer{
 	background: #e5e8ea;
 	padding: 50px 0;
+	@include mq(){
+		padding: 50px 0 80px;
+	}
 	.inner{
 		max-width: 900px;
 	}
@@ -11,12 +14,20 @@
 		&__logo{
 			display: block;
 			width: 180px;
+			@include mq(){
+				width: 130px;
+				margin-bottom: 20px;
+			}
 		}
 		&__ct{
 			width: calc(100% - 180px);
 			padding: 0 0 0 50px;
 			@include font-size(14);
 			line-height: 1.8;
+			@include mq(){
+				width: 100%;
+				padding: 0;
+			}
 			p{
 				margin-bottom: 20px;
 			}
@@ -57,5 +68,46 @@
 				color: #777777;
 			}
 		}
+	}
+}
+
+.block-note{
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	@include flex(0,0,wrap);
+	li{
+		width: 50%;
+		a{
+			@include flex(center,center,wrap);
+			color: white;
+			@include font-size(18);
+			line-height: 1;
+			padding: 10px 0;
+			small{
+				display: inline-block;
+				@include font-size(10);
+			}
+			i{
+				display: inline-block;
+				margin: 0 7px 0 0;
+				@include font-size(15);
+			}
+			small{
+				display: inline-block;
+				font-weight: 400;
+				position: relative;
+				top: 2px;
+				margin: 0 0 0 2px;
+			}
+		}
+	}
+	&__tel{
+		background: #C91D6E;
+		font-weight: bold;
+	}
+	&__mail{
+		background: #2F4E6E;
 	}
 }

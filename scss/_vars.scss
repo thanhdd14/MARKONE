@@ -6,9 +6,11 @@ Font
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
 
 $font-basic : "Nanum Gothic", sans-serif;
-$font-noto : "Noto Sans KR", sans-serif;
+$font-notoSan : "Noto Sans KR", sans-serif;
+$font-notoSerif : "Noto Serif KR", serif;
 $font-KoHo : "KoHo", sans-serif;
 
 @mixin font-fm($fmValue, $fwValue) {
