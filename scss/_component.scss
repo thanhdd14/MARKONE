@@ -1,0 +1,108 @@
+@use "vars" as *;
+
+
+.c-fc{ //font-color
+	&--white{
+		color: white !important;
+	}
+	&--black{
+		color: black !important;
+	}
+}
+
+
+.c-ft{
+	&--kr{
+		font-family: $font-noto !important;
+	}
+	&--kh{
+		font-family: $font-KoHo !important;
+	}
+}
+
+
+
+
+
+
+.c-al{
+	&--c{
+		text-align: center !important;
+	}
+	
+	&--r{
+		text-align: right !important
+	}
+	
+	&--l{
+		text-align: left !important;
+	}
+}
+
+
+
+// Image position control
+.c-pull{
+	&--left{
+		margin-left: calc(((100vw - 100%) / 2) * -1)
+	}
+	&--right{
+		margin-right: calc(((100vw - 100%) / 2) * -1)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ====================================================
+Component
+==================================================== */
+// Common Text style
+.c-txt{
+	&__basic{
+
+	}
+}
+
+
+
+
+//ttl
+.c-ttl{
+	&__01{
+		display: block;
+		text-align: center;
+		@include font-size(36);
+		line-height: 1.2;
+		color: #CEB3A4;
+		span{
+			display: inline-block;
+			position: relative;
+			&:before,&:after{
+				position: absolute;
+				bottom: 0;
+				content: "/";
+			}
+			&:before{
+				left: 0;
+			}
+			&:after{
+				right: 0;
+			}
+		}
+	}
+
+}
+
+//btn
+.c-btn{
+	&__01{
+
+	}
+}
