@@ -1,0 +1,78 @@
+@use "vars" as *;
+
+.tab-list{
+	@include flex(0,0,wrap);
+	border-bottom: 3px solid #42665C;
+	padding: 0 5px;
+	margin-bottom: 80px;
+	@include mq(){
+		margin: 0 -15px 40px;
+		border-bottom: 2px solid #42665C;
+	}
+	li{
+		width: 33.333%;
+		a{
+			display: block;
+			padding: 10px 0;
+			background-color: #FFFFFF;
+			border-radius: 8px 8px 0 0;
+			color: #42665C;
+			@include font-size(24);
+			text-align: center;
+			text-transform: uppercase;
+			@include mq(){
+				@include font-size(18);
+			}
+			&.active,&:hover{
+				opacity: 1;
+				background: #42665C;
+				color: white;
+			}
+		}
+	}
+}
+
+.plan-block{
+	color: #001822;
+	@include font-size(18);
+	line-height: 1.6;
+	margin-bottom: 80px;
+	@include mq(){
+		@include font-size(16);
+		margin-bottom: 40px;
+	}
+	&__ttl{
+		display: block;
+		color: #00506F;
+		line-height: 1;
+		font-size: 8rem;
+		font-weight: bold;
+		margin-bottom: 30px;
+		@include mq(){
+			font-size: 6rem;
+			margin-bottom: 20px;
+		}
+		small{
+			font-size: 4rem;
+			@include mq(){
+				font-size: 3rem;
+			}
+		}
+	}
+	&__note{
+		display: inline-block;
+		background: #EDEDED;
+		padding: 0 40px;
+		margin-bottom: 20px;
+		@include mq(){
+			margin-bottom: 10px;
+		}
+	}
+	img{
+		display: block;
+		margin: 0 auto;
+	}
+	p{
+		margin-bottom: 30px;
+	}
+}

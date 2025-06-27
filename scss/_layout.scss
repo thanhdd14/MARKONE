@@ -1,0 +1,43 @@
+@use "vars" as *;
+
+.layout-block{
+	margin-bottom: 80px;
+	@include mq(){
+		margin-bottom: 40px;
+	}
+	&__ttl{
+		display: block;
+		text-align: center;
+		color: #AE8770;
+		@include font-size(30);
+		line-height: 1.4;
+		font-weight: bold;
+		letter-spacing: 10px;
+		margin-bottom: 20px;
+		@include mq(){
+			@include font-size(24);
+			letter-spacing: 0;
+		}
+	}
+	&__list{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 30px;
+		@include mq(){
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+		&-item{
+			padding: 20px 20px 20px 20px;
+			background-color: #AE8770;
+			border: 3px solid #FFEDE5;
+			color: white;
+			@include font-size(16);
+			line-height: 1.6;
+			height: 100%;
+		}
+		&-ttl{
+			font-weight: bold;
+		}
+	}
+}

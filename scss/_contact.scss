@@ -1,0 +1,141 @@
+@use "vars" as *;
+
+.contact-ttl{
+	@include flex(center,center,wrap);
+	text-align: center;
+	color: #1B2C61;
+	margin-bottom: 30px;
+	small{
+		display: block;
+		width: 100%;
+		letter-spacing: 8.2px;
+		font-size: 1.4rem;
+	}
+	span{
+		display: block;
+		position: relative;
+		font-size: 4rem;
+		font-weight: 500;
+		padding: 0 3px;
+		@include mq(){
+			font-size: 3.4rem;
+		}
+		&:after{
+			content: "/ ";
+			font-size: 2rem;
+			@include mq(){
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+.contact-note{
+	text-align: center;
+	@include font-size(18);
+	line-height: 1.6;
+	margin-bottom: 50px;
+	@include mq(){
+		@include font-size(16);
+		margin-bottom: 30px;
+	}
+}
+.contact-heading{
+	text-align: center;
+	line-height: 1.2;
+	color: #E31A79;
+	font-weight: bold;
+	@include font-size(30);
+	margin-bottom: 100px;
+	@include mq(){
+		@include font-size(24);
+	}
+	span{
+		display: inline-block;
+		padding: 10px 0;
+		border-top: 3px solid #E31A79;
+		border-bottom: 3px solid #E31A79;
+	}
+}
+
+.contact-form{
+	border: 11px solid rgba(222, 202, 194, 0.15);
+	padding: 50px 8%;
+	@include font-size(16);
+	color: #777;
+	line-height: 1.6;
+	@include mq(){
+		@include font-size(14);
+		border: 5px solid rgba(222, 202, 194, 0.15);
+		padding: 30px 20px;
+	}
+	.c-ttl__04{
+		@include font-size(20);
+		color: #333;
+		@include mq(){
+			@include font-size(16);
+		}
+		&:before{
+			top: 3px;
+			color: #EFAB76;
+			@include mq(){
+				top: 1px;
+			}
+		}
+	}
+	&__note{
+		color: #777;
+		border: 1px solid #777;
+		height: 80px;
+		overflow-y: scroll;
+		margin-bottom: 30px;
+		@include font-size(14);
+		padding: 10px 30px 30px;
+		@include mq(){
+			padding: 10px 15px 30px;
+		}
+	}
+	dl{
+		margin-bottom: 30px;
+		@include mq(){
+			margin-bottom: 15px;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+		dt{
+			margin-bottom: 5px;
+			sub{
+				color: red;
+			}
+		}
+		dd{
+
+		}
+	}
+	&__sub{
+		@include flex(center,center,wrap);
+		padding: 15px 0 0;
+		&-btn{
+			@include flex(center,center,wrap);
+			padding: 13px 20px;
+			margin: 0 10px 10px;
+			background-color: #C51769;
+			border: none;
+			color: #FFFFFF;
+			@include smooth-transition;
+			cursor: pointer;
+			outline: none;
+			@include font-size(20);
+			font-family: $font-notoSan;
+			line-height: 1;
+			border-radius: 4px;
+			@include mq(){
+				@include font-size(18);
+			}
+			i{
+				display: block;
+				margin: 0 10px 0 0;
+			}
+		}
+	}
+}
